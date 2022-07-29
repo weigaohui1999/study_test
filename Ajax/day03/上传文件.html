@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./js/bootstrap.css">
+</head>
+
+<body>
+    <input type="file" name="" id="">
+
+    <button>上传文件</button>
+
+    <div class="progress" style="width: 500px;margin: 15px 10px;"> 
+        <div class="progress-bar active" style="width: 60%;" id="progress">
+            60%
+        </div>
+    </div>
+
+    <img src="" alt="" width="800">
+
+    <script>
+        var button = document.querySelector('button')
+
+        button.addEventListener('click', function () {
+
+            // 获取选择的文件列表
+            var file = document.querySelector('input').files
+            console.log(file)
+
+            if (file.length <= 0) {
+                alert('请选择要上传的文件')
+            }
+
+            // 向formdata里面追加图片
+            var fd = new FormData()
+            fd.append('avator', file[0])
+
+            // xhr上传文件
+            var xhr = new XMLHttpRequest()
+            // 监听文件上传进度
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    var procentComplate = Math.ceil((e.loaded / e.total) * 100)
+                    
+                    // 动态设置进度条
+                   var pg =  document.querySelector('#progress')
+                   pg.style.width = procentComplate + '%'
+                   pg.innerHTML = procentComplate + '%'
+                }
+            }
+
+            xhr.upload.onload = function(){
+                var pg = document.querySelector('#progress')
+                pg.classList.remove()
+                pg.classList.add('progress-bar progress-bar-success')
+            }
+            xhr.open('post', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            xhr.send(fd)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && status === 200) {
+                    var res = JSON.parse(xhr.responseText)
+                    if (res.status === 200) {
+                        document.querySelector('img').src = 'http://www.liulongbin.top:3006/' + res.url
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

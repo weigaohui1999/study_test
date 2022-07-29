@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/template-web.js"></script>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <div class="name">
+
+    </div>
+    <script type="text/html" id="tpl">
+        <h1>{{ name }}</h1>
+        {{@ test }}
+
+        <div>
+            {{if flag === 0}}
+            flag的值为0
+            {{else if flag ===1}}
+            flag的值为1
+            {{/if}}
+        </div>
+
+        <div>
+            {{each habby}}
+            <li>索引是：{{$index}} 值是：{{$value}}</li>
+            {{/each}}
+        </div>
+
+        <div>
+            {{retime | format}}
+        </div>
+    </script>
+    <script>
+        var data = {
+            name: '张三',
+            test: '<h1>woheni</h1>',
+            flag: 0,
+            habby: ['吃饭', '游戏', '打代码'],
+            retime: new Date()
+        }
+
+        var str = template('tpl', data)
+        template.defaults.imports.format = function(data){
+            var y = data.getFullYear()
+            var m = data.getMonth() + 1
+            var d = data.getDate()
+
+            return y + '-' + m + '-' + d
+        }
+        $('.name').html(str)
+    </script>
+</body>
+
+</html>

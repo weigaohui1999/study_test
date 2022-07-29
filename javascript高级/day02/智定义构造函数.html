@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person (uname,age,sex) {
+            this.uname = uname
+            this.age =age
+            this.sex = sex
+        }
+
+        let p = new Person('张三', 18, '男')
+        p.language = '汉语'
+        Person.eat = function() {
+            console.log('123')
+        }
+        console.log(p)
+        console.log(Person.eat) 
+
+        let a = new Object({uname: '1'})
+        let b = Object.keys(a)
+        let c = Object.keys(a)
+        console.log(b)
+
+
+        let arr = {
+            '0': 1,
+            '1': 2,
+            length: 2
+        }
+
+        let arr2 = Array.from(arr)
+        console.log(arr2)
+    </script>
+</body>
+</html>

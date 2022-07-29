@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(uname,age,sex) {
+                this.uname = uname
+                this.age = age
+                this.sex = sex
+            }
+
+            say() {
+                console.log('person说话')
+            }
+        }
+
+        class Star extends Person{
+            // 初始化
+            constructor(uname,age,sex,money){
+                // 继承调用父类成员
+                super(uname,age,sex)
+                this.money = money
+            }
+                // 调用父类方法
+            say() {
+                super.say()
+            }
+        }
+
+        let star = new Star('张三', 22 , '男' , 100000)
+        console.log(star)
+        star.say()
+        console.log(Star.prototype)
+    </script>
+</body>
+</html>

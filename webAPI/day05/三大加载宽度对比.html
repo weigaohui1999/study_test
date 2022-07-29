@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: auto;
+            padding: 10px;
+            border: 10px solid green;
+            margin: 200px auto;
+        }
+
+        body {
+            height: 3000px
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        at后天无二我让SAP
+        啊他【9欧鹏套娃啊额
+        啊高水平噶怕是ig0ewa
+        啊特我撒豆 安伟鹏IPa
+        阿萨
+        阿萨是 洒的收到打ag阿萨as 洒方式啊洒是鹅王鹅王恩爱娲奥威
+        af啊
+        a是
+        阿萨干撒二娃二娃打额啊法王额啊
+        fas
+        洒f as
+        asd a是e
+        a啊sd as a
+        啊我洒是是啊
+    </div>
+    <script>
+        // 1.scrollWidth  scrollHeight 内容
+        let div = document.querySelector('div')
+        console.log(div.scrollWidth,div.scrollHeight)
+
+        // 2.offset
+        console.log(div.offsetWidth,div.offsetHeight)
+        console.log(div.offsetTop,div.offsetLeft)
+
+        // 3.client
+        console.log(div.clientWidth,div.clientHeight)
+        
+        window.addEventListener('scroll', function () {
+            console.log(document.documentElement.scrollTop)
+        })
+    </script>
+</body>
+
+</html>

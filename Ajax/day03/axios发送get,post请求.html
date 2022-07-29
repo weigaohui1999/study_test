@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/axios.js"></script>
+</head>
+
+<body>
+    <button class="button1">发起get请求</button>
+    <button class="button2">发起post请求</button>
+    <button class="button3">axios直接发起get请求</button>
+    <button class="button4">axios直接发起post请求</button>
+
+    <script>
+        document.querySelector('.button1').addEventListener('click',function(){
+            var url = 'http://www.liulongbin.top/api/get'
+            var param = { name: 'zs', age: 20 }
+            axios.get(url,{ params: param }).then(function(res){
+                console.log(res)
+            })
+        })
+
+        document.querySelector('.button2').addEventListener('click',function(){
+            var url = 'http://www.liulongbin.top/api/post'
+            var param = { name: 'zs', age: 20 }
+            axios.get(url,param ).then(function(res){
+                console.log(res)
+            })
+        })
+
+        document.querySelector('.button3').addEventListener('click',function(){
+            var url = 'http://www.liulongbin.top/api/get'
+            var param = { name: 'zs', age: 20 }
+
+            axios({
+                method: 'get',
+                url: url,
+                params: param
+            }).then(function(res){
+                console.log(res)
+            })
+        })
+
+        document.querySelector('.button4').addEventListener('click',function(){
+            var url = 'http://www.liulongbin.top/api/post'
+            var param = { name: 'zs', age: 20 }
+
+            axios({
+                method: 'post',
+                url: url,
+                data: param
+            }).then(function(res){
+                console.log(res)
+            })
+        })
+    </script>
+</body>
+
+</html>

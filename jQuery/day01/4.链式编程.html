@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>07-链式编程</title>
+    <style>
+      body {
+        padding: 0 30px 40px;
+      }
+
+      p {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>07-链式编程</h3>
+    <p>链式编程 通过点(.) 把多个操作连续的写下去, 形成和 链子 一样的结构</p>
+    <!-- 测试用 输入框 -->
+    <input type="text" class="text" />
+    <!-- 导入jQuery -->
+    <script src="../jquery/jquery-3.5.1.js"></script>
+    <script>
+      // $('.text').focus(function(){
+      //   console.log('获得焦点')
+      // })
+      // $('.text').blur(function(){
+      //   console.log('失去焦点')
+      // })
+
+      $('.text').focus(function(){
+        console.log('获得焦点')
+      }).blur(function(){
+        console.log('失去焦点')
+      }).change(function(){
+        console.log('改变了')
+      })
+    </script>
+  </body>
+</html>

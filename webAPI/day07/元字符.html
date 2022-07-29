@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.边界符
+        console.log(/哈/.test('哈哈'))
+        // ^为开头
+        console.log(/^哈/.test('二哈'))
+        // %为结尾
+        console.log(/^哈$/.test('我哈哈'))  //false
+        console.log(/^哈$/.test('哈哈')) //false
+        console.log(/^哈$/.test('哈')) // true
+
+        // 2.量词
+        // *   次数n>= 0
+        console.log(/a*/.test('b')) // true
+        console.log(/a*/.test('aa')) //  true
+
+        // =   次数n>= 1
+        console.log(/a+/.test('')) // false
+        console.log(/a+/.test('a')) // true
+        console.log(/a+/.test('aa')) // true
+
+        // ? 次数 n = 0|| 1
+        console.log(/a?/.test('')) // true
+        console.log(/a?/.test('a')) // true
+        console.log(/^a+$/.test('aa')) // true
+        console.log(/^a+$/.test('a')) // true
+
+        // {n}  n次
+        console.log(/^a{3}$/.test('')) // false
+        console.log(/^a{3}$/.test('a')) // false
+        console.log(/^a{3}$/.test('aaa')) // true
+        console.log(/^a{3}$/.test('aaaa')) // false
+
+        // {n,}  n次,n次以上
+        console.log(/^a{3,}$/.test('')) // false
+        console.log(/^a{3,}$/.test('a')) // false
+        console.log(/^a{3,}$/.test('aaa')) // true
+        console.log(/^a{3,}$/.test('aaaa')) // true
+
+        // {n,m}  n次,m次之间
+        console.log(/^a{3,6}$/.test('')) // false
+        console.log(/^a{3,6}$/.test('a')) // false
+        console.log(/^a{3,6}$/.test('aaa')) // true
+        console.log(/^a{3,6}$/.test('aaaaaa')) // true
+        console.log(/^a{3,6}$/.test('aaaaaaa')) // false
+
+
+        // 3.字符类
+    </script>
+</body>
+
+</html>
