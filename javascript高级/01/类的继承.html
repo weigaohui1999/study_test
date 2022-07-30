@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.创建类
+        class Person {
+            // 类的共有属性放在constructot里面
+            constructor(uname,age){
+                this.uname = uname
+                this.age = age
+            }
+            song(song){
+                console.log(this.uname + song)
+            }
+        }
+        //儿子类 extends  父类 
+        class Star extends Person {
+            constructor(uname,age){
+                // 调用了父类中的构造函数
+                super(uname,age)
+            }
+        }
+
+        // 2.利用类创建实例对象
+
+        var ldh = new Person('LIUDEHUA',20)
+        ldh.song('冰雨')
+        console.log(ldh)
+
+        var son = new Star('德华')
+        son.song('爱你一万年')
+    </script>
+</body>
+</html>

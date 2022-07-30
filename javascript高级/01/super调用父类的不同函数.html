@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor(x,y){
+                this.x = x
+                this.y = y
+            }
+            sum(x,y){
+                console.log(this.x + this.y)
+            }
+        }
+
+        class Star extends Person {
+            constructor(x,y){
+                super(x,y)
+            }                
+        
+            sunstrunt(x,y){
+                console.log(this.x - this.y)
+            }
+        }
+
+        var son = new Star(2,4)
+        son.sunstrunt()
+        son.sum()
+    </script>
+</body>
+</html>
