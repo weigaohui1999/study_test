@@ -58,7 +58,7 @@
                 this.add.onclick = this.addTab
                 for(var i = 0;i < this.lis.length;i++) {
                     this.lis[i].index = i
-                    this.lis[i].onclick = this.toggleTab
+                    this.lis[i].onclick = this.toggleTab.bind(this.lis[i],this)
                     this.del[i].onclick = this.delTab
                     this.spans[i].ondblclick = this.editTab
                     this.sections[i].ondblclick = this.editTab
@@ -77,7 +77,7 @@
                 }
             }
             // 1.切换功能
-            toggleTab() {
+            toggleTab(that) {
                 that.clearClass()
                 this.className = 'liactive'
                 that.sections[this.index].className = 'conactive'
