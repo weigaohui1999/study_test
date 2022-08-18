@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day03/demo-cart" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day04/demo-1 动态组件" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day04/demo-2 插槽" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day04/demo-3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day04/demo-cart" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/day05/router-demo1" vcs="Git" />
+  </component>
+</project>

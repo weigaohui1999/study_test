@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <button class="get">get</button>
+    <button class="post">post</button>
+    <button class="jsonp">jsonp</button>
+
+    <script>
+        $('.get').on('click', function () {
+            $.ajax({
+                method: 'get',
+                url: 'http://127.0.0.1/api/get',
+                param: {},
+                success: function (res) {
+                    console.log(res)
+                }
+            })
+        })
+        $('.post').on('click', function () {
+            $.ajax({
+                method: 'post',
+                url: 'http://127.0.0.1/api/post',
+                data: {},
+                success: function (res) {
+                    console.log(res)
+                }
+            })
+        })
+        $('.jsonp').on('click', function () {
+            $.ajax({
+                method: 'get',
+                url: 'http://127.0.0.1/api/jsonp',
+                dataType: 'jsonp',
+                success: function (res) {
+                    console.log(res)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 希望 Vue 能够控制下面的这个 div，帮我们在把数据填充到 div 内部 -->
+  <div id="app">
+    <button @click="post">发起post请求</button>
+    <button @click="get">发起get请求</button>
+  </div>
+
+  <!-- 1. 导入 Vue 的库文件，在 window 全局就有了 Vue 这个构造函数 -->
+  <script src="./lib/vue-2.6.12.js"></script>
+  <script src="./lib/axios.js"></script>
+  <!-- 2. 创建 Vue 的实例对象 -->
+  <script>
+    // 创建 Vue 的实例对象
+    const vm = new Vue({
+      el: '#app',
+      methods:{
+        async post(){
+          const { data } = await axios({
+            method: 'post',
+            url: 'http://www.liulongbin.top:3006/api/post',
+            // 请求体
+            data: {
+              name: 'zs',
+              id: 1
+            }
+          })
+          console.log(data)
+        },
+
+        async get(){
+          // 把解构出来的data重名为res
+          const { data: res } = await axios({
+            method: 'get',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            // 请求体
+
+          })
+          console.log(res.data)
+        }
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

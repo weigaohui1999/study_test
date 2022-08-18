@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 剩余参数
+        let [a, b, ...c] = [1,2,3,4,5]
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+
+        // 扩展运算符
+        let name = ['张三', '李四', '王五']
+        // console.log(...name)
+
+        function fn(a){
+            return function (b){
+                return Math.pow(a,b)
+            }
+        }
+
+        var f = fn(2)(3)
+        // console.log(f)
+
+        // 数组去重
+        var s = new Set(['a','b','a','b'])
+        var array = [...s]
+        console.log(array)
+    </script>
+</body>
+</html>
